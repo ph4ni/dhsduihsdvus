@@ -3,31 +3,29 @@ import java.util.*;
 
 public class lol {
 	public static void main(String[]args) {
+       try{
 		Scanner scn = new Scanner(System.in);
-		int m = scn.nextInt();
+		int m = scn.nextInt(); 
 		for(int i=0;i<m;i++){
-		    int l =1; 
-            int n = scn.nextInt();
-            int k = scn.nextInt();
-		    String result =  scn.next();
-		    for(int j=0;j<n-1;j++) {
-		    	if ( result.charAt(j)== '*' && result.charAt(j+1)=='*') {
-		    		++l;
-		    		//System.out.println(l);
-		    		if(l>=k) {
-		    			System.out.println("YES");
-		    			break;
-		    		}
-		    	}else {
-		    		l = 1;
-		    	}
-		    	
-		    }
-		    if(l == 1 || l<k) {
-	    		System.out.println("NO");
-	    		}
+			int n = scn.nextInt(); int a,b,c;
+			int p = n/4;
+			int q = n%4;
+			//System.out.println(p + "is"+ q);
+			    a = (p)*44;
+			    if(p!=0) {
+			    a = a + (4-q)*4;
+			    }
+			    switch (q) {
+			    case 1 : a = a+20; break;
+			    case 2 : a = a+36; break;
+			    case 3 : a = a+51; break;
+			      
+			    }
+			
+			System.out.println(a);
 		}
-			//System.out.println("NO");
-		
+		}catch(Exception e){
+			return;
+		}
 	}
 }
